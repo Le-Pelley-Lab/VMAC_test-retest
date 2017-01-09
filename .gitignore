@@ -1,0 +1,12 @@
+# Matlab Data Files
+*.mat
+*.asv
+
+# Excel
+*.csv
+
+# Inquisit
+*.iqdat
+
+# Images
+*.jpg
