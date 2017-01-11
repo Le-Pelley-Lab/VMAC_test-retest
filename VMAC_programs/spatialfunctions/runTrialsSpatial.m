@@ -31,7 +31,7 @@ NumRareDistract = 4;       % 2. So 2 trials per block with each of distractor ty
 exptTrialsBeforeBreak = 4 * exptTrialsPerBlock;     % 4 * exptTrialsPerBlock = 96
 
 pracTrials = 10;    % 10
-exptTrials = 10; %3 * exptTrialsBeforeBreak;    % 6 * exptTrialsBeforeBreak
+exptTrials = 3 * exptTrialsBeforeBreak;    % 6 * exptTrialsBeforeBreak
 
 
 stimLocs = 6;       % Number of stimulus locations

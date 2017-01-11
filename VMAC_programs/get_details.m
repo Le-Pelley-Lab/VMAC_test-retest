@@ -205,6 +205,7 @@ function [experiment] = get_details(conditions, sessions, bonus)
 
                         if ismember(counterbalance, conditions{:})
                             experiment('counterbalance') = counterbalance;
+                            participant('counterbalance') = counterbalance;
                             break;
                         end
                     
@@ -460,10 +461,11 @@ function [experiment] = get_details(conditions, sessions, bonus)
     % filename
     data_filename = [data_filename, session];  % include session now
     experiment('data_filename') = data_filename;  % add to experiment Map
-   
     
 %     % save DATA
       save(experiment('data_filename'), 'experiment');
+      
+      
 %     DATA.experiment = experiment;
 %     save(data_filename, 'DATA');
     
