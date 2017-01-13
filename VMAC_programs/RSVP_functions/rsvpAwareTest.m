@@ -4,7 +4,7 @@ global MainWindow
 global DATA
 global bColour white screenWidth screenHeight
 global rewardString1 neutralString1
-global awareTestPoints session
+global awareTestPoints session cueBalance
 
 yellow = [255, 255, 0];
 
@@ -21,7 +21,7 @@ instrString3 = 'Please click on one of the options to make your response';
 lineLength = 94;
 textLeft = 140;
 
-if session == 1
+if strcmp(session, '1')
     switch cueBalance
         case {1, 3}
             distString(1,:) = 'BIRD     ';
@@ -46,7 +46,7 @@ awareTrialOrder = randperm(2); %randomly decide whether rewarded or unrewarded t
 
 %%% CREATE RESPONSE OPTIONS
 responseRectHeight = 120;
-responseRect = [0, 0, 300, responseRectHeight];
+responseRect = [0, 0, 500, responseRectHeight];
 informFramePenWidth = 3;
 
 responseGap = 270;
@@ -114,7 +114,7 @@ DrawFormattedText(confLabelMaxWindow, confLabelMaxString, 'center', 20, cyan);
 for t = 1 : 2
 %%% DRAW INITIAL RESPONSE SCREEN
 
-questionString = [instrString2, strtrm(distString(awareTrialOrder(t),:))];
+questionString = [instrString2, strtrim(distString(awareTrialOrder(t),:)), '?'];
 
 [~, ny, ~] = DrawFormattedText(instrWindow, instrString, textLeft, 100, white, lineLength, [], [], 1.3);
 DrawFormattedText(instrWindow, questionString, textLeft, ny, yellow, lineLength, [], [], 1.3);
@@ -190,7 +190,7 @@ while clickedConfButton == 0
 end
 
 
-DATA.awareTestInfo = [awareTrialOrder(t), clickedCorrectResponse, clickedConfButton];
+DATA.awareTestInfo(t,:) = [awareTrialOrder(t), clickedCorrectResponse, clickedConfButton];
     
 
 
@@ -208,6 +208,8 @@ Screen('Flip', MainWindow);
 
 RestrictKeysForKbCheck(KbName('Space'));   % Only accept spacebar
 KbWait([], 2);
+
+Screen('FillRect', instrWindow, bColour);
 
 end
 

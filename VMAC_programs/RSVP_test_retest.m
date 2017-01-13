@@ -39,8 +39,8 @@ if testVersion == 1     % Parameters for development / debugging
     soundLatency = 0;
     commandwindow;  % can type sca to exit
 else     % Parameters for running the real experiment
-    Screen('Preference', 'SkipSyncTests', 0);
-    screenNum = 0;
+    Screen('Preference', 'SkipSyncTests', 1); %change back to 0
+    screenNum = 1;
     soundLatency = 1;
 end    
 

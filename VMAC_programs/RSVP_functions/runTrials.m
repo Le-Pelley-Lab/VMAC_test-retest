@@ -24,7 +24,7 @@ lagType1 = 2;
 lagType2 = 4;   % Removed lag 10 since it's not very interesting.
 
 
-exptBlocks = 1; %7;    % 7: MIKE - increased since we now have 40 trials per block (instead of 45), and each trial is shorter
+exptBlocks = 7;    % 7: MIKE - increased since we now have 40 trials per block (instead of 45), and each trial is shorter
 numTrialsInMainExpt = 40;       % 40:  MIKE - 40 trials per block now that we don't have lag 10
 
 finalDistractDuration = 0.1;    % 0.1     100 ms distractor duration
