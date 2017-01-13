@@ -6,7 +6,7 @@ global DATA exptName MainWindow
 global bColour white screenWidth screenHeight
 global cueBalance
 global soundPAhandle winSoundArray loseSoundArray
-global datafilename
+global datafilename session
 global testing startingTotal  % Andy
 
 exptName = 'RSVP_test_retest';
@@ -214,6 +214,9 @@ DATA.end_time = datestr(now,0);
 DATA.exptDuration = GetSecs - startSecs;
 DATA.amountSession = amountEarned;
 DATA.amountTotal = startingTotal + amountEarned;
+
+clickedCorrectResponse = rsvpAwareTest;
+
 save(datafilename, 'DATA');
 
 experiment('rsvp') = DATA;  % Andy
